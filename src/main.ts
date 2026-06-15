@@ -82,11 +82,28 @@ const posts: Post[] = [
 
 const library: LibraryItem[] = [
   {
-    title: "Reading list coming soon",
-    note:
-      "Book PDFs can live under public/library and will be served directly by Cloudflare assets.",
-    href: "/library/index.html",
-    meta: "PDF shelf",
+    title: "The Road to Serfdom",
+    note: "商务印书馆译本。",
+    href: "/library/通向奴役的道路 商务印书馆译本.pdf",
+    meta: "PDF",
+  },
+  {
+    title: "A Pattern Language",
+    note: "Christopher Alexander's book on towns, buildings, and living structure.",
+    href: "/library/Alexander_A_Pattern_Language.pdf",
+    meta: "PDF",
+  },
+  {
+    title: "槭树下的家",
+    note: "席慕蓉文集。",
+    href: "/library/books_席慕蓉文集-槭树下的家.pdf",
+    meta: "PDF",
+  },
+  {
+    title: "The Design of Everyday Things",
+    note: "Don Norman on affordance, feedback, and everyday usability.",
+    href: "/library/The Design of Everyday Things by Don Norman.pdf",
+    meta: "PDF",
   },
 ];
 
