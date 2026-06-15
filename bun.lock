@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "neil",
+      "dependencies": {
+        "marked": "^18.0.5",
+      },
       "devDependencies": {
         "vite": "^8.0.16",
         "wrangler": "^4.100.0",
@@ -230,6 +233,8 @@
     "lightningcss-win32-arm64-msvc": ["lightningcss-win32-arm64-msvc@1.32.0", "", { "os": "win32", "cpu": "arm64" }, "sha512-8SbC8BR40pS6baCM8sbtYDSwEVQd4JlFTOlaD3gWGHfThTcABnNDBda6eTZeqbofalIJhFx0qKzgHJmcPTnGdw=="],
 
     "lightningcss-win32-x64-msvc": ["lightningcss-win32-x64-msvc@1.32.0", "", { "os": "win32", "cpu": "x64" }, "sha512-Amq9B/SoZYdDi1kFrojnoqPLxYhQ4Wo5XiL8EVJrVsB8ARoC1PWW6VGtT0WKCemjy8aC+louJnjS7U18x3b06Q=="],
+
+    "marked": ["marked@18.0.5", "", { "bin": { "marked": "bin/marked.js" } }, "sha512-S6GcvALHg6K4ohtu4E7x0a1AqhAjp6cV8KhLSyN9qVapnzJkusVBxZRcIU9AeYsbe6P1hKDusSbEOzGyyuce6w=="],
 
     "miniflare": ["miniflare@4.20260611.0", "", { "dependencies": { "@cspotcode/source-map-support": "0.8.1", "sharp": "0.34.5", "undici": "7.24.8", "workerd": "1.20260611.1", "ws": "8.20.1", "youch": "4.1.0-beta.10" }, "bin": { "miniflare": "bootstrap.js" } }, "sha512-i+JwEo8vN96naz1WL3ntFgFyRluBDYL408zwhHKvR2jefJ464KsZ/gCmJAQ5k+oaWeb5Ug+s7yne5AyiAEswjg=="],
 

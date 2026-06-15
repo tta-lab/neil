@@ -1,4 +1,11 @@
 import "./styles.css";
+import { marked } from "marked";
+import claudeSettingsBody from "./posts/configuring-claude-codes-settings.md?raw";
+import memorySessionsBody from "./posts/how-we-manage-memory-and-sessions-for-long-running-agents.md?raw";
+import multiRepoBody from "./posts/managing-15-repos-with-claude-code-via-a-coordination-layer.md?raw";
+import architectureBody from "./posts/the-architecture-behind-a-multi-agent-claude-code-system.md?raw";
+import replacedToolsBody from "./posts/we-replaced-every-tool-claude-code-has-with-a-custom-implementation.md?raw";
+import turnBasedAgentBody from "./posts/why-every-ai-agent-is-playing-a-turn-based-game.md?raw";
 
 type Post = {
   title: string;
@@ -6,6 +13,7 @@ type Post = {
   slug: string;
   summary: string;
   tags: string[];
+  body: string;
 };
 
 type LibraryItem = {
@@ -23,6 +31,7 @@ const posts: Post[] = [
     summary:
       "Tool calls, model turns, fog of war, and why agent loops feel closer to games than chats.",
     tags: ["ai agents"],
+    body: turnBasedAgentBody,
   },
   {
     title: "Managing 15+ Repos with Claude Code via a Coordination Layer",
@@ -31,6 +40,7 @@ const posts: Post[] = [
     summary:
       "What breaks when agent work spans many repos, and how a coordination layer keeps state sane.",
     tags: ["agents", "workflow"],
+    body: multiRepoBody,
   },
   {
     title: "The Architecture Behind a Multi-Agent Claude Code System",
@@ -39,6 +49,7 @@ const posts: Post[] = [
     summary:
       "Two planes, append-only state, session forking, and the boring parts that make agents usable.",
     tags: ["architecture", "agents"],
+    body: architectureBody,
   },
   {
     title: "How We Manage Memory and Sessions for Long-Running Agents",
@@ -47,6 +58,7 @@ const posts: Post[] = [
     summary:
       "A practical look at context, memory, and session boundaries in agent systems that keep working.",
     tags: ["memory", "agents"],
+    body: memorySessionsBody,
   },
   {
     title: "Configuring Claude Code's Settings",
@@ -55,6 +67,7 @@ const posts: Post[] = [
     summary:
       "A short guide to the settings that change daily Claude Code usage more than people expect.",
     tags: ["claude code"],
+    body: claudeSettingsBody,
   },
   {
     title: "We Replaced Every Tool Claude Code Has with a Custom Implementation",
@@ -63,6 +76,7 @@ const posts: Post[] = [
     summary:
       "What we learned after rebuilding the tool surface instead of treating it as a black box.",
     tags: ["tooling", "agents"],
+    body: replacedToolsBody,
   },
 ];
 
@@ -93,6 +107,12 @@ function formatDate(date: string): string {
     month: "short",
     day: "2-digit",
   }).format(new Date(`${date}T00:00:00`));
+}
+
+function renderMarkdown(markdown: string): string {
+  const clean = markdown.replace(/^# .+\n+/, "");
+
+  return marked.parse(clean, { async: false }) as string;
 }
 
 function pixelAvatar(): string {
@@ -160,7 +180,7 @@ function renderHome(): string {
         </div>
         <div class="portrait-panel">
           ${pixelAvatar()}
-          <p>A small pixel sketch. Glasses included.</p>
+          <p>Usually debugging something that was supposed to be simple.</p>
         </div>
       </section>
 
@@ -292,11 +312,8 @@ function renderPost(): string {
         <p class="eyebrow">${formatDate(post.date)}</p>
         <h1>${post.title}</h1>
         <p class="lede">${post.summary}</p>
-        <div class="article-placeholder">
-          <p>
-            This route is ready for the post. Add the article body here, or
-            replace the static data with Markdown when the writing archive is ready.
-          </p>
+        <div class="article-body">
+          ${renderMarkdown(post.body)}
         </div>
       </article>
     </main>
