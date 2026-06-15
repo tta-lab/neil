@@ -62,7 +62,7 @@
 ]
 
 #item(
-  [Illinois Institute of Technology · Master of Applied Computer Science (MACS)],
+  [Illinois Institute of Technology · M.S. CS],
   [2023 - 2025],
 )[
 - 2023 年在华为工作期间开始通过线上课程修读硕士项目，2024 年赴美国完成后续课程。
