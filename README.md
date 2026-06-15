@@ -1,4 +1,4 @@
-# Neil Zhang
+# Neil
 
 Personal homepage for `neil.guion.io`.
 

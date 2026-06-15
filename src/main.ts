@@ -17,28 +17,52 @@ type LibraryItem = {
 
 const posts: Post[] = [
   {
-    title: "Why Non-Technical Decisions Matter More Than Code",
-    date: "2026-06-13",
-    slug: "why-non-technical-decisions-matter-more-than-code",
+    title: "Why Every AI Agent Is Playing a Turn-Based Game",
+    date: "2026-04-12",
+    slug: "why-every-ai-agent-is-playing-a-turn-based-game",
     summary:
-      "A note on product judgment, tradeoffs, and the work that code alone cannot finish.",
-    tags: ["product", "agents"],
+      "Tool calls, model turns, fog of war, and why agent loops feel closer to games than chats.",
+    tags: ["ai agents"],
   },
   {
-    title: "Building With Agents Without Losing Taste",
-    date: "2026-06-02",
-    slug: "building-with-agents-without-losing-taste",
+    title: "Managing 15+ Repos with Claude Code via a Coordination Layer",
+    date: "2026-03-27",
+    slug: "managing-15-repos-with-claude-code-via-a-coordination-layer",
     summary:
-      "How I use agents as teammates while keeping direction, review, and taste close to the work.",
-    tags: ["engineering", "ai"],
+      "What breaks when agent work spans many repos, and how a coordination layer keeps state sane.",
+    tags: ["agents", "workflow"],
   },
   {
-    title: "From Notes to a Portable Agent",
-    date: "2026-05-18",
-    slug: "from-notes-to-a-portable-agent",
+    title: "The Architecture Behind a Multi-Agent Claude Code System",
+    date: "2026-03-24",
+    slug: "the-architecture-behind-a-multi-agent-claude-code-system",
     summary:
-      "FlickNote started from a small irritation: note-taking kept breaking my train of thought.",
-    tags: ["flicknote", "design"],
+      "Two planes, append-only state, session forking, and the boring parts that make agents usable.",
+    tags: ["architecture", "agents"],
+  },
+  {
+    title: "How We Manage Memory and Sessions for Long-Running Agents",
+    date: "2026-03-24",
+    slug: "how-we-manage-memory-and-sessions-for-long-running-agents",
+    summary:
+      "A practical look at context, memory, and session boundaries in agent systems that keep working.",
+    tags: ["memory", "agents"],
+  },
+  {
+    title: "Configuring Claude Code's Settings",
+    date: "2026-03-28",
+    slug: "configuring-claude-codes-settings",
+    summary:
+      "A short guide to the settings that change daily Claude Code usage more than people expect.",
+    tags: ["claude code"],
+  },
+  {
+    title: "We Replaced Every Tool Claude Code Has with a Custom Implementation",
+    date: "2026-03-21",
+    slug: "we-replaced-every-tool-claude-code-has-with-a-custom-implementation",
+    summary:
+      "What we learned after rebuilding the tool surface instead of treating it as a black box.",
+    tags: ["tooling", "agents"],
   },
 ];
 
@@ -73,33 +97,31 @@ function formatDate(date: string): string {
 
 function pixelAvatar(): string {
   const rows = [
+    ".....hhhhhh.....",
     "....hhhhhhhh....",
-    "...hhhhhhhhhh...",
-    "..hhbbbbbbbbhh..",
-    "..hbssssssssbh..",
-    ".hbssfssssssbh..",
-    ".hbssffffffsbh..",
-    ".hbsgggssgggsbh.",
-    ".hbsgggooggssbh.",
-    ".hbssssnnssssbh.",
-    ".hbsssmmmmsssbh.",
-    "..hbssmmmmmssb..",
-    "..hbbssssssbbh..",
-    "...hhbbbbbbhh...",
-    "....hhcccccc....",
+    "...hhsssssshh...",
+    "...hssssssssh...",
+    "...hssssssssh...",
+    "...ssxxxxxxss...",
+    "...ssxllxllxss..",
+    "...ssxllxllxss..",
+    "...sssssdssss...",
+    "...ssssmmssss...",
+    "...ssssssssss...",
+    "....ssssssss....",
+    ".....ssssss.....",
+    ".....cccccc.....",
+    "....cccccccc....",
     "...cccccccccc...",
-    "..cccccccccccc..",
   ];
 
   const colors: Record<string, string> = {
     h: "#17130f",
-    b: "#2a1f18",
-    s: "#d6ae89",
-    f: "#e6c2a0",
-    g: "#111111",
-    o: "#f6efe4",
-    n: "#8d563c",
-    m: "#6d3f32",
+    s: "#d9b08b",
+    d: "#a76f50",
+    x: "#101010",
+    l: "#f3dfc7",
+    m: "#8f3f36",
     c: "#1d2a34",
   };
 
@@ -114,7 +136,7 @@ function pixelAvatar(): string {
     })
     .join("");
 
-  return `<div class="pixel-avatar" aria-label="Pixel portrait of Neil Zhang">${pixels}</div>`;
+  return `<div class="pixel-avatar" aria-label="Pixel portrait of Neil">${pixels}</div>`;
 }
 
 function renderHome(): string {
@@ -122,16 +144,18 @@ function renderHome(): string {
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Neil Zhang / 张跃飞</p>
+          <p class="eyebrow">Neil</p>
           <h1 id="hero-title">I build small teams that make serious software.</h1>
           <p class="lede">
-            Founder building FlickNote and TTAL. Former Huawei engineer.
-            SUSTech computer science, Illinois Tech CS.
+            I build FlickNote and Lenos: tools for notes, agents, and software teams.
+            Before that, I worked on production software at Huawei.
           </p>
           <div class="hero-actions" aria-label="Primary links">
             <a href="https://flicknote.app">FlickNote</a>
-            <a href="https://git.guion.io/neil">Code</a>
-            <a href="mailto:neil@guion.io">Email</a>
+            <a href="https://tta-lab.github.io/lenos-website/">Lenos</a>
+            <a href="https://github.com/tta-lab">tta-lab</a>
+            <a href="https://github.com/GuionAI">GuionAI</a>
+            <a href="mailto:neil@flicknote.app">Email</a>
           </div>
         </div>
         <div class="portrait-panel">
@@ -145,14 +169,14 @@ function renderHome(): string {
           <h2>Work</h2>
           <p>
             I care about tools that help people keep context: notes, agents,
-            code review, and the boring systems that make all of it reliable.
+            code, and the boring systems that make all of it reliable.
           </p>
         </div>
         <div>
           <h2>Current</h2>
           <p>
-            FlickNote is becoming a portable agent for ideas, life management,
-            meeting notes, and classroom notes.
+            FlickNote keeps personal context close. Lenos explores how agents
+            should work when the job spans repos, sessions, and time.
           </p>
         </div>
         <div>
@@ -172,7 +196,7 @@ function renderHome(): string {
         <div class="timeline">
           <article>
             <span>2025 - now</span>
-            <h3>Founder, FlickNote + TTAL</h3>
+            <h3>Building FlickNote + Lenos</h3>
             <p>
               Building agent-native products and the workflow around them:
               capture, review, delegation, and shipping.
