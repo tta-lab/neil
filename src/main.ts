@@ -148,7 +148,7 @@ function renderHome(): string {
           <h1 id="hero-title">I build agent teams that make serious software.</h1>
           <p class="lede">
             I build FlickNote and Lenos: tools for notes, agents, and software teams.
-            Before that, I worked on production software at Huawei.
+            Before that, I built Kubernetes systems and web GIS visualization at Huawei.
           </p>
           <div class="hero-actions" aria-label="Primary links">
             <a href="https://flicknote.app">FlickNote</a>
@@ -160,7 +160,7 @@ function renderHome(): string {
         </div>
         <div class="portrait-panel">
           ${pixelAvatar()}
-          <p>Thin face. Glasses. Usually debugging something that was supposed to be simple.</p>
+          <p>A small pixel sketch. Glasses included.</p>
         </div>
       </section>
 
@@ -214,8 +214,8 @@ function renderHome(): string {
             <span>2021 - 2024</span>
             <h3>Software Engineer, Huawei</h3>
             <p>
-              Worked from web development into cloud and Kubernetes. Learned
-              what production discipline feels like at scale.
+              Built web GIS visualization features, then moved deeper into
+              cloud and Kubernetes engineering.
             </p>
           </article>
           <article>
