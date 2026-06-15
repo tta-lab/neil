@@ -24,3 +24,12 @@ bun run deploy:prod
 Cloudflare Workers assets publish everything in `dist`. Files in
 `public/library` are copied to `/library/*`, so shared book PDFs can be linked
 directly from the homepage after they are added.
+
+## Resume
+
+```bash
+typst compile resume/sustech-resume.typ resume/sustech-resume.pdf
+```
+
+The resume uses `Noto Serif CJK SC`; if Typst cannot find it, install a Noto CJK
+font or pass the font directory with `--font-path`.
