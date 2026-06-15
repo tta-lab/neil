@@ -28,8 +28,15 @@ directly from the homepage after they are added.
 ## Resume
 
 ```bash
-typst compile resume/sustech-resume.typ resume/sustech-resume.pdf
+bun run resume:build
 ```
 
-The resume uses `Noto Serif CJK SC`; if Typst cannot find it, install a Noto CJK
-font or pass the font directory with `--font-path`.
+For live rebuilds while editing:
+
+```bash
+bun run resume:watch
+```
+
+The resume uses `Noto Serif CJK SC`; the kosmos WSL environment provides Typst
+and the CJK font package. If you are outside that environment, set
+`TYPST_FONT_PATH` to a directory containing Noto CJK fonts.
