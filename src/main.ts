@@ -145,7 +145,7 @@ function renderHome(): string {
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">Neil</p>
-          <h1 id="hero-title">I build small teams that make serious software.</h1>
+          <h1 id="hero-title">I build agent teams that make serious software.</h1>
           <p class="lede">
             I build FlickNote and Lenos: tools for notes, agents, and software teams.
             Before that, I worked on production software at Huawei.
