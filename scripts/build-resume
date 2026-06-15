@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+mode="${1:-compile}"
+input="resume/sustech-resume.typ"
+output="resume/sustech-resume.pdf"
+font_name="Source Han Serif SC"
+
+if [[ "$mode" != "compile" && "$mode" != "watch" ]]; then
+  echo "usage: scripts/build-resume [compile|watch]" >&2
+  exit 2
+fi
+
+has_font() {
+  typst fonts "$@" | grep -Fxq "$font_name"
+}
+
+font_args=()
+
+if [[ -n "${TYPST_FONT_PATH:-}" ]]; then
+  if ! has_font --font-path "$TYPST_FONT_PATH"; then
+    echo "Typst cannot find '$font_name' in TYPST_FONT_PATH=$TYPST_FONT_PATH" >&2
+    exit 1
+  fi
+  font_args=(--font-path "$TYPST_FONT_PATH")
+elif has_font; then
+  font_args=()
+else
+  candidates=(
+    "/run/current-system/sw/share/fonts"
+    "/run/current-system/sw/share/X11/fonts"
+    "/etc/profiles/per-user/${USER:-neil}/share/fonts"
+    "${HOME:-}/.nix-profile/share/fonts"
+    "/System/Library/Fonts"
+    "/Library/Fonts"
+    "${HOME:-}/Library/Fonts"
+  )
+
+  for path in "${candidates[@]}"; do
+    [[ -n "$path" && -d "$path" ]] || continue
+    if has_font --font-path "$path"; then
+      font_args=(--font-path "$path")
+      break
+    fi
+  done
+
+  if [[ "${#font_args[@]}" -eq 0 ]]; then
+    cat >&2 <<EOF
+Typst cannot find '$font_name'.
+
+Install Source Han Serif SC, or set TYPST_FONT_PATH to a directory containing it:
+
+  TYPST_FONT_PATH=/path/to/source-han-serif bun run resume:build
+
+The kosmos WSL package set should provide it after rebuild.
+EOF
+    exit 1
+  fi
+fi
+
+if [[ "$mode" == "watch" ]]; then
+  exec typst watch "${font_args[@]}" "$input" "$output"
+fi
+
+exec typst compile "${font_args[@]}" "$input" "$output"
