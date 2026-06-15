@@ -1,0 +1,15 @@
+{
+  "name": "neil",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy:prod": "bun run build && wrangler deploy --env prod"
+  },
+  "devDependencies": {
+    "vite": "^8.0.16",
+    "wrangler": "^4.100.0"
+  }
+}

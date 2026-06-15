@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "neil-homepage",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-06-15",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "dist"
+  },
+  "observability": {
+    "logs": {
+      "enabled": true
+    }
+  },
+  "env": {
+    "prod": {
+      "routes": [
+        {
+          "pattern": "neil.guion.io",
+          "custom_domain": true
+        }
+      ]
+    }
+  }
+}
