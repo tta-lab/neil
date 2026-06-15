@@ -37,6 +37,8 @@ For live rebuilds while editing:
 bun run resume:watch
 ```
 
-The resume uses `Noto Serif CJK SC`; the kosmos WSL environment provides Typst
-and the CJK font package. If you are outside that environment, set
-`TYPST_FONT_PATH` to a directory containing Noto CJK fonts.
+The resume uses `Source Han Serif SC`; the kosmos WSL environment provides
+Typst and the CJK font package. If you are outside that environment, set
+`TYPST_FONT_PATH` to a directory containing Source Han Serif fonts. The build
+script fails fast if Typst cannot see the font, instead of producing a PDF with
+boxed Chinese text.

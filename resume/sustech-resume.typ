@@ -4,7 +4,7 @@
 )
 
 #set text(
-  font: ("Noto Serif CJK SC", "Libertinus Serif"),
+  font: ("Source Han Serif SC", "Libertinus Serif"),
   size: 9.25pt,
   lang: "zh",
 )

@@ -6,8 +6,8 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "resume:build": "typst compile --font-path \"${TYPST_FONT_PATH:-/run/current-system/sw/share/fonts}\" resume/sustech-resume.typ resume/sustech-resume.pdf",
-    "resume:watch": "typst watch --font-path \"${TYPST_FONT_PATH:-/run/current-system/sw/share/fonts}\" resume/sustech-resume.typ resume/sustech-resume.pdf",
+    "resume:build": "scripts/build-resume compile",
+    "resume:watch": "scripts/build-resume watch",
     "deploy:prod": "bun run build && wrangler deploy --env prod"
   },
   "devDependencies": {
