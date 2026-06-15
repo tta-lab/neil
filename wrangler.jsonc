@@ -16,8 +16,8 @@
     "prod": {
       "routes": [
         {
-          "pattern": "neil.guion.io",
-          "custom_domain": true
+          "pattern": "neil.guion.io/*",
+          "zone_name": "guion.io"
         }
       ]
     }
