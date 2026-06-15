@@ -38,7 +38,7 @@
 #align(center)[
   #text(size: 17pt, weight: "bold")[张跃飞]
   #v(0.12em)
-  #text(fill: muted)[南方科技大学 2021 届计算机科学与技术 · 前华为软件工程师 · FlickNote / Lenos 创业者]
+  #text(fill: muted)[南方科技大学 2021 届计算机科学与技术 · 前华为软件工程师 · GuionAI 联合创始人]
   #v(0.18em)
   #text(size: 8.8pt)[
     Email: #link("mailto:neil@flicknote.app")[neil\@flicknote.app] · WeChat: neiloi ·
@@ -48,7 +48,7 @@
 
 #section[个人简介]
 
-南方科技大学计算机科学与技术专业 2021 届校友。毕业后在华为做软件工程，先做 Web GIS 可视化，后来转向云计算和 Kubernetes。2023 年起在职修读 Illinois Institute of Technology 计算机科学硕士课程，2024 年赴美国完成剩余课程。现在回国创业，做 FlickNote 和 Lenos，关注个人知识工具、agent-native 软件工程，以及 AI 时代学生怎样做长期选择。
+南方科技大学计算机科学与技术专业 2021 届校友。毕业后在华为做软件工程，先做 Web GIS 可视化，后来转向云计算和 Kubernetes。2023 年起在职修读 Illinois Institute of Technology 计算机科学硕士课程，2024 年赴美国完成剩余课程。现在是 GuionAI 联合创始人，做 FlickNote 和 Lenos，关注个人知识工具、agent-native 软件工程，以及 AI 时代学生怎样做长期选择。
 
 #section[教育经历]
 
@@ -73,7 +73,7 @@
 #section[工作与创业经历]
 
 #item(
-  [FlickNote / Lenos · 创业者],
+  [GuionAI · 联合创始人],
   [2025 - 至今],
 )[
 - FlickNote 做灵感记录、生活管理、会议纪要和课堂笔记，希望把零散信息变成之后还能找回、还能继续用的东西。
