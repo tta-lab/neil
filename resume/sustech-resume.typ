@@ -64,7 +64,7 @@
   [Illinois Institute of Technology · Computer Science],
   [2024.08 - 2025.06],
 )[
-- 硕士阶段学习分布式计算、函数式编程、计算机安全、人机交互、研究方法与实验设计；在 SSIL（Social Spatial Interaction Lab）做 AR interaction research，负责增强现实社交项目。
+- 硕士阶段学习分布式计算、人机交互、研究方法与实验设计；在 SSIL（Social Spatial Interaction Lab）做 AR interaction research，负责增强现实社交项目。
 ]
 
 #section[工作与创业经历]
