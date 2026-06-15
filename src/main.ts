@@ -34,6 +34,15 @@ const posts: Post[] = [
     body: turnBasedAgentBody,
   },
   {
+    title: "Configuring Claude Code's Settings",
+    date: "2026-03-28",
+    slug: "configuring-claude-codes-settings",
+    summary:
+      "A short guide to the settings that change daily Claude Code usage more than people expect.",
+    tags: ["claude code"],
+    body: claudeSettingsBody,
+  },
+  {
     title: "Managing 15+ Repos with Claude Code via a Coordination Layer",
     date: "2026-03-27",
     slug: "managing-15-repos-with-claude-code-via-a-coordination-layer",
@@ -59,15 +68,6 @@ const posts: Post[] = [
       "A practical look at context, memory, and session boundaries in agent systems that keep working.",
     tags: ["memory", "agents"],
     body: memorySessionsBody,
-  },
-  {
-    title: "Configuring Claude Code's Settings",
-    date: "2026-03-28",
-    slug: "configuring-claude-codes-settings",
-    summary:
-      "A short guide to the settings that change daily Claude Code usage more than people expect.",
-    tags: ["claude code"],
-    body: claudeSettingsBody,
   },
   {
     title: "We Replaced Every Tool Claude Code Has with a Custom Implementation",
